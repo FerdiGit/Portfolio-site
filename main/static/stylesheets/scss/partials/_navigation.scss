@@ -1,0 +1,161 @@
+/**************************************/
+/*            Navigation              */
+/**************************************/
+
+
+/** 
+ * Nav Icon Styles
+ */
+svg {
+  display: flex;
+  fill: $off-white;
+}
+
+
+/**
+ * Navigation layout
+ */
+header {
+  background-color: $off-black;
+  bottom: 0;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+
+  @media screen and (min-width: $medium) {
+    top: 0;
+  }
+
+  @media screen and (min-width: $large) {
+    height: 100%;
+    width: 60px;
+    transition: width .5s ease-in-out;
+
+    &:hover {
+      width: 180px;
+
+      .social-links li a p,
+      .main-nav li a p {
+        display: inline-block;
+      }
+    }
+
+    #logo-pink {
+      z-index: 3;
+
+      svg {
+        fill: lighten($pink, 15%);
+        stroke: $pink;
+      }
+    }
+
+    #logo-teal {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+
+      svg {
+        fill: lighten($teal, 15%);
+        stroke: $teal;
+      }
+    }
+  }
+
+  svg {
+    width: 4em;
+
+    @media screen and (min-width: $large) {
+      width: 3em;
+    }
+  }
+ 
+  /**
+   * Hide Logos In Smaller Viewports
+   */
+  .nav-logos svg {
+    display: none;
+
+    @media screen and (min-width: $large) {
+      display: initial;
+      stroke-width: 1em;
+      width: 5.8em;
+    }
+  }
+
+  .social-links {
+    display: none;
+    text-decoration: none;
+
+    @media screen and (min-width: $large) {
+      bottom: 5;
+      display: initial;
+      padding: 5px 15px;
+      position: absolute;
+
+      li {
+        position: relative;
+
+        a {
+          padding: 0;
+
+          p {
+            top: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .main-nav {
+    display: flex;
+
+    @media screen and (min-width: $large) {
+      flex-direction: column;
+
+      .nav-icon {
+        display: none;
+      }
+    }
+
+      li {
+      bottom: 0;
+      flex-grow: 1;
+      position: relative;
+
+      @media screen and (min-width: $large) {
+        overflow: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        display: block;
+        padding: 10px 15px;
+
+        p {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .social-links li,
+  .main-nav li {
+    @media screen and (min-width: $large) {
+      postition: relative;
+      margin-bottom: 5px;
+
+      p {
+        display: none;
+        color: $off-white;
+        font-size: 2em;
+        left: 3em;
+        position: absolute;
+        top: .8em;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+

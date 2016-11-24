@@ -1,0 +1,28 @@
+/* About Page - Skill-Box */
+
+.quote {
+  display: none;
+  z-index: 1;
+  margin: -20em 2em 0;
+
+  @media screen and (min-width: $medium) {
+    color: lighten($teal, 15%);
+    display: flex;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: -1px 2px 2px lighten($pink, 15%);
+
+    span {
+      font-size: 1.2em;
+      color: lighten($pink, 15%);
+      text-shadow: -1px 2px 2px lighten($teal, 15%);
+    }
+  }
+
+  @media screen and (min-width: $large) {
+    margin: -20em 10% 0;
+  }
+}
+
+

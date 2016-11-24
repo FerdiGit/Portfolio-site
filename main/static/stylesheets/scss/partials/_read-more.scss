@@ -1,0 +1,46 @@
+/**************************************/
+/*            Read More               */
+/**************************************/
+
+/**
+ * Base Styles
+ */
+.btn {
+  border: .25em solid $teal;
+  color: $teal;
+  display: flex;
+  font-size: 2em;
+  margin: 1em auto 4em;
+  padding: 0.5em;
+  pointer-events: initial;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 8.5em;
+
+  /* Before Hover - Shadow Offset */
+  &::before {
+    background-color: lighten($pink, 15%);
+    box-shadow: .5em .5em 0 lighten($pink, 25%), 
+                1em 1em 0 lighten($pink, 50%);
+    content: "";
+    height: 102%;
+    left: 0.25em;
+    position: absolute;
+    top: 0.5em;
+    transition: all 0.4s ease;
+    width: 102%;
+    z-index: -1;
+  }
+
+  /* Hover Styles */
+  &:hover::before {
+    box-shadow: none;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+

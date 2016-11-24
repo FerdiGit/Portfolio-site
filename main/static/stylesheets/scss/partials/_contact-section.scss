@@ -1,0 +1,68 @@
+/**************************************/
+/*         Contact Section            */
+/**************************************/
+
+/**
+ * Base Styles
+ */
+.contact-form {
+  margin: 1em;
+  position: relative;
+  z-index: 2;
+
+  h3 {
+    font-size: 3.8em;
+    color: lighten($pink, 15%);
+    text-shadow: 2px 2px $teal;
+    text-align: center;
+    margin: 1em 0 2em;
+  }
+
+  p {
+    font-size: 1.4em;
+    color: lighten($off-black, 20%);
+    margin: 1em 1em 2em;
+
+
+    @media screen and (min-width: $large) {
+      margin: 0;
+    }
+  }
+
+  a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: $teal;
+    height: 2em;
+
+    p {
+      color: $teal;
+      font-size: 1.6em;
+      padding-left: 1em;
+      margin: 0;
+      
+      @media screen and (min-width: $small){
+        font-size: 1.8em;
+      }
+    }
+  }
+
+  .sec-wrapper {
+    margin-top: 2em;
+    
+    svg {
+      fill: $teal;
+      width: 2em;
+    }
+  }
+
+  @media screen and (min-width: $medium) {
+    width: 50em;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $large) {
+    margin: calc(25% - 150px) 55% calc(25% - 150px) 10%;
+  }
+}

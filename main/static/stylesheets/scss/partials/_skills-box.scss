@@ -1,0 +1,85 @@
+/**************************************/
+/*          Profile Picture           */
+/**************************************/
+
+/**
+ * Base Styles
+ */
+.skill-box {
+  border-radius: 5px;
+  display: block;
+  padding: 0 2% 5em;
+  position: relative;
+  text-shadow: none;
+  width: 100%;
+  z-index: 2;
+
+  /* Section Headers */
+  > h3 {
+    color: lighten($off-black, 30%);
+    font-size: 2.5em;
+    margin: 45px 0 5px;
+    text-align: left;
+  }
+
+  > .skills{
+    margin-bottom: 10px;
+
+    > ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: left;
+
+      > li {
+        border-radius: 5px;
+        padding: 8px;
+        position: relative;
+
+        > span {
+          color: map-get($color, text_from);
+          font-size: 1.2em;
+
+          /* Animated Bars */
+          &.bar {
+            background: map-get($color, bg_from);
+            background: -webkit-linear-gradient(to right, map-get($color, bg_from), map-get($color, bg_end));
+            background:         linear-gradient(to right, map-get($color, bg_from), map-get($color, bg_end));
+            bottom: 0;
+            border-radius: 5px;
+            box-shadow: 0px 1px 3px rgba(map-get($color, bg_from), .2);
+            display: block;
+            height: 6px;
+            left: 0;
+            position: absolute;
+
+            /* Number - End of Bar */
+            > b {
+              bottom: 0;
+              color: map-get($color, text_end);
+              display: none;
+              font-size: 1em;
+              font-weight: normal;
+              position: absolute;
+              margin-bottom: 8px;
+              right: 0;
+            }
+          }
+        }
+
+        /* Underlying Bars */
+        &::after {
+          background-color: $off-black;
+          bottom: 0;
+          box-shadow: 0px 0px 1px #FEB, 0 1px 0 white;
+          content: '';
+          height: 1px;
+          left: 0;
+          margin-bottom: 2px;
+          position: absolute;
+          width: 100%;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}

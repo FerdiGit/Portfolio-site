@@ -1,0 +1,19 @@
+/**************************************/
+/*          Profile Picture           */
+/**************************************/
+
+.profile-pic {
+  img {
+    background: lighten($pink, 25%);
+    border-radius: 50%;
+    border: 1em solid lighten($teal, 20%);
+    position: relative;
+    margin: 2em 25%;
+    width: 50%;
+    z-index: 2;
+  }
+
+  @media screen and (min-width: $large) {
+    width: 50%;
+  }
+}

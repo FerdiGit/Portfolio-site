@@ -1,0 +1,48 @@
+/**************************************/
+/*          Factory Picture           */
+/**************************************/
+
+.factory-pic {
+  img {
+    pointer-events: none;
+    position: relative;
+    margin: 2em 25% 0;
+    top: 0;
+    width: 50%;
+    z-index: 2;
+
+    @media screen and (min-width: $medium) {
+      width: 30%;
+      margin: 2em 35% 0;
+    }
+
+    @media screen and (min-width: $x-large) {
+      width: 20%;
+      margin: 2em 40% 0;
+    }
+  }
+
+  &::after {
+    content: "";
+    display:block;
+    margin: 0 25%;
+    position: absolute;
+    -webkit-box-shadow: 0 0 1em .3em $off-black;
+       -moz-box-shadow: 0 0 1em .3em $off-black;
+         -o-box-shadow: 0 0 1em .3em $off-black;
+            box-shadow: 0 0 1em .3em $off-black;
+    width: 50%;
+    z-index: 1;
+
+    @media screen and (min-width: $medium) {
+      width: 30%;
+      margin: 0 35%;
+    }
+
+    @media screen and (min-width: $medium) {
+      width: 20%;
+      margin: 0 40%;
+    }
+  }
+}
+

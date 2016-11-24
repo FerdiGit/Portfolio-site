@@ -1,0 +1,139 @@
+/**************************************/
+/*            Rolldown List           */
+/**************************************/
+
+/**
+ * Base Styles
+ */
+.rolldown {
+  cursor: pointer;
+  clear: both;
+  color: $off-white;
+  padding: 1em;
+  position: relative;
+  text-shadow: 3px 3px 5px $off-black;
+
+  @media screen and (min-width: $medium) {
+    display: flex;
+    padding-bottom: 40em;
+
+    ul {
+      width: 32%;
+    }
+  }
+
+  @media screen and (min-width: $large) {
+    ul {
+      width: 29%;
+    }
+  }
+
+  @media screen and (min-width: $x-large) {
+    ul {
+      width: 26%;
+    }
+  }
+
+  /* Alternating Colours and Borders */
+  .hate li,
+  .like li {
+    background: $pink;
+
+    &:nth-child(2n+1) {
+      background: $teal;
+    }
+  }
+
+  .interests li {
+    background: $teal;
+
+    &:nth-child(2n+1) {
+      background: $pink;
+    }
+  }
+}
+
+
+/**
+ * Each List Style
+ */
+.rolldown-list {
+  margin: auto;
+  padding-bottom: 1em;
+  position: relative;
+  text-align: left;
+  z-index: 2;
+
+  @media screen and (min-width: $medium) {
+    position: absolute; 
+    &.like {
+      left: 1em;
+    }
+
+    &.interests {
+      left: 0;
+      right: 0;
+    }
+
+    &.hate {
+      right: 1em;
+    }
+  }
+
+  @media screen and (min-width: $large) {
+    &.like {
+      left: 7em;
+      transform: perspective(1200px) rotateY(40deg) skewY(5deg);
+      transform-origin: top right;
+    }
+
+    &.interests {
+      left: 7em;
+      transform: perspective(600px) translateZ(1px);
+    }
+
+    &.hate {
+      transform: perspective(1200px) rotateY(-40deg) skewY(-5deg);
+      transform-origin: top left;
+    }
+  }
+  
+  @media screen and (min-width: $x-large) {
+    &.like {
+      left: 12em;
+    }
+
+    &.hate {
+      right: 6em;
+    }
+  }
+
+  li {
+    background: $off-black;
+    display: block;
+    font-size: 1em;
+    list-style: none;
+    margin-bottom: .125em;
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+
+/**
+ * Hide Children Until Clicked
+ */
+.rolldown-list-hide li ~ li {
+  display: none;
+}
+
+
+/**
+ * Add Animation Timers and Styles
+ */
+.cssanimations .rolldown-list li {
+  animation: rolldown 0.7s 1s;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}

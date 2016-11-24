@@ -1,0 +1,27 @@
+/**************************************/
+/*            Variables               */
+/**************************************/
+
+/**
+ * Colours
+ */
+$off-black: #131618;
+$off-white: #E9EDEE;
+$pink: #C50867;
+$teal: #08C566;
+
+/**
+ * Break-points
+ */
+$x-small: 360px;
+$small: 540px;
+$medium: 720px;
+$large: 1024px;
+$x-large: 1366px;
+
+/**
+ * Skill-bars Colours
+ */
+$color: (bg_from: $teal, bg_end: $pink,
+         text_from:$teal, text_end: $pink)
+

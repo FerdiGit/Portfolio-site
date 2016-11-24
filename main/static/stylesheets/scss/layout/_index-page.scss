@@ -1,0 +1,69 @@
+/**************************************/
+/*            Index Page              */
+/**************************************/
+
+/**
+ * Body Text
+ */
+.body-text{
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
+
+  @media screen and (min-width: $large) {
+    position: absolute;
+    display: inline-block;
+    padding: calc(50% - 540px) 0 0 calc(50% - 400px);
+  }
+
+  @media screen and (min-width: $x-large) {
+    padding: calc(50% - 880px) 0 0 calc(50% - 505px);
+  }
+
+  .headers,
+  .pars,
+  .spans-pink,
+  .spans-teal{
+    color: lighten($pink, 15%);
+    text-align: center;
+  }
+
+  .headers {
+    font-size: 5em;
+    text-shadow: 2px 2px $teal;
+
+    @media screen and (min-width: $large) {
+      font-size: 8em;
+    }
+
+    @media screen and (min-width: $x-large) {
+      font-size: 12em;
+    }
+  }
+
+  .pars{
+    color: lighten($off-black, 30%);
+    font-size: 2em;
+
+    @media screen and (min-width: $large) {
+      font-size: 3.5em;
+    }
+
+    @media screen and (min-width: $x-large) {
+      font-size: 4.5em;
+    }
+  }
+
+  .spans-pink {
+    color: lighten($pink, 15%);
+    font-size: 1.2em;
+    text-shadow: 1px 1px lighten($teal, 15%);
+  }
+
+  .spans-teal {
+    color: lighten($teal, 15%);
+    font-size: 1.2em;
+    text-shadow: 1px 1px lighten($pink, 15%);
+  }
+}  
+

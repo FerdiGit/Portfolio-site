@@ -1,0 +1,51 @@
+/**************************************/
+/*            Base Styles             */
+/**************************************/
+
+/* reset margin and paddin */
+body,
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  list-style: none;
+  font-family: 'Days One', sans-serif;
+}
+
+.clearfix {
+  *zoom: 1;
+
+  &:before, &:after {
+    display: table;
+    content: "";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+/* background styles */
+#particle-canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#page-section {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @media screen and (min-width: $medium) {
+    padding-top: 60px;
+  }
+
+  @media screen and (min-width: $large) {
+    padding-top: 0;
+  }
+}

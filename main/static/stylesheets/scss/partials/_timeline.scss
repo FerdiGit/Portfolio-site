@@ -1,0 +1,166 @@
+/**************************************/
+/*            Rolldown List           */
+/**************************************/
+
+/**
+ * Header
+ */
+.time-head {
+  color: lighten($off-black, 30%);
+  display: flex;
+  font-size: 1.7em;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+
+/**
+ * Base Styles
+ */
+.timeline {
+  overflow: hidden;
+  margin: 0 calc(50% - 17em);
+  padding-bottom: 6em;
+  position: relative;
+  z-index: 2;
+
+  @media screen and (min-width: $medium) {
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  ul {
+    @media screen and (min-width: $medium) {
+      &:nth-child(odd) div {
+        left: 0;
+
+        &::before {
+          border-width: 8px 16px 8px 0;
+          border-color: transparent $teal transparent transparent;
+        }
+      }
+
+      &:nth-child(even) div {
+        left: -339px;
+
+        &::before {
+          left: 25.8em;
+          border-width: 8px 0 8px 16px;
+          border-color: transparent transparent transparent $teal;
+        }
+      }
+    }
+
+    div {
+
+      &::before {
+        border-width: 8px 16px 8px 0;
+        border-color: transparent $teal transparent transparent;
+        left: 25px;
+      }
+    }
+
+    &:first-child li {
+      border-radius: 3px 3px 0 0;
+    }
+
+    li {
+      background: $teal;
+      list-style-type: none;
+      margin-left: 2em;
+      padding-bottom: 1em;
+      position: relative;
+      width: 6px; 
+      
+      @media screen and (min-width: $medium) {
+        margin: 0 auto;
+      }
+
+      &::after {
+        background: inherit;
+        border-radius: 50%;
+        content: '';
+        height: 2em;
+        left: 50%;
+        position: absolute;
+        top: 1.2em;
+        transform: translateX(-50%);
+        width: 2em;
+      }
+
+      &.in-view div{
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+      }
+
+      div {
+        background: lighten($teal, 40%);
+        border: .2em solid $teal;
+        border-radius: 1em;
+        bottom: 0;
+        margin-left: 4em;
+        padding: 1em;
+        position: relative;
+        width: 26em;
+
+        p {
+          color: lighten($off-black, 30%);
+          font-size: 1.6em;
+          text-shadow: none;
+        }
+
+        time {
+          color: $pink;
+          display: block;
+          font-size: 1.8em;
+          font-weight: bold;
+          margin-bottom: 8px;
+        }
+
+        &::before {
+          border-style: solid;
+          content: '';
+          height: 0;
+          left: -1.8em;
+          position: absolute;
+          top: 1.3em;
+          width: 0;
+        }
+      }
+    }
+  }
+}
+
+.timeline ul {
+
+  li::after {
+    transition: background .5s ease-in-out;
+  }
+
+  li div {
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease-in-out;
+    transform: translate3d(200px, 0, 0);
+  }
+
+  li.in-view div {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+
+  @media screen and (min-width: $medium) {
+    &:nth-child(odd) div {
+      transform: translate3d(200px, 0, 0);
+    }
+
+    &:nth-child(even) div {
+      transform: translate3d(-200px, 0, 0);
+    }
+  }
+}
+

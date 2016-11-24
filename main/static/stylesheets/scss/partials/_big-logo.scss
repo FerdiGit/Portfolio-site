@@ -1,0 +1,82 @@
+/**************************************/
+/*            Big Logo                */
+/**************************************/
+
+/** 
+ * Base Styles
+ */
+.logo-wrapper {
+
+  #logo-big {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    pointer-events: none;
+    
+    @media screen and (min-width: $large) {
+      position: absolute;
+      top: 0;
+      right: 40px;
+    }
+
+    /* Shared Styles */
+    #logo-big-teal,
+    #logo-big-pink {
+      float: left;
+      list-style: none;
+      width: 50%;
+      z-index: 2;
+
+      @media screen and (min-width: $large) {
+        float: none;
+        width: 100%;
+      }
+
+      svg {
+        max-height: 160px;
+        width: 100%;
+
+        @media screen and (min-width: $x-small) {
+          max-height: 260px;
+        }
+
+        @media screen and (min-width: $small){
+          max-height: 360px;
+        }
+        
+        @media screen and (min-width: $x-large) {
+          max-height: 660px;
+        }
+
+        /* Animation */
+        .logo {
+          stroke: $pink;
+          stroke-dasharray: 1587;
+          stroke-dashoffset: 1587;
+          stroke-width: 2px;
+
+          animation: offset 4s linear forwards, fill-it-pink .8s 4s forwards;
+        }
+      }
+    }
+
+    /* Give an off-set to bottom logo */
+    #logo-big-teal {
+      left: 0;
+      margin: 3px calc(50% + 24%) -3px calc(50% - 24%);
+      position: absolute;
+      right: 0;
+      z-index: 1;
+
+      @media screen and (min-width: $large) {
+        margin: 1.5% 2px;
+      }
+
+      svg .logo {
+        stroke: $teal;
+
+        animation: offset 4s linear forwards, fill-it-teal .8s 4s forwards;
+      }
+    }
+  }
+}

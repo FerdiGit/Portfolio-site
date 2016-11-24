@@ -1,0 +1,66 @@
+/**************************************/
+/*            Overlay Nav             */
+/**************************************/
+
+
+/**
+ * Base Overlay Styles
+ */
+.overlay-nav-open {
+  background: $off-black;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: .5s;
+  width: 100%;
+
+  /**
+   * Page Navigation
+   */
+  .nav-icon {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+
+    @media screen and (min-width: $medium) {
+      top: 0;
+    }
+  }
+
+  .main-nav {
+    flex-direction: column;
+    margin: 2em calc(50% - 11em) 2em;
+
+    p {
+      color: $off-white;
+      font-size: 3em;
+      padding-left: .3em;
+    }
+
+    a, p {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+ 
+
+  /**
+   * Social Media Navigation
+   */
+  .social-links {
+    display: flex;
+    flex-direction: row;
+    
+    li {
+      margin: 0 auto;
+
+      p {
+        display: none;
+      }
+    }
+  }
+}
+
+
