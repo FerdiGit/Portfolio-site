@@ -1,2 +1,2 @@
-web: gunicorn personal-app:app
+web: gunicorn personal-app/main:app
 
