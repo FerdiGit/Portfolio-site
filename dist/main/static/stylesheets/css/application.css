@@ -584,7 +584,7 @@ body,
         top: 0; } }
   .overlay-nav-open .main-nav {
     flex-direction: column;
-    margin: 2em calc(50% - 12em) 2em; }
+    margin: 2em calc(50% - 11em) 2em; }
     .overlay-nav-open .main-nav p {
       color: #E9EDEE;
       font-size: 3em;
